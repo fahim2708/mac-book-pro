@@ -61,11 +61,11 @@
                     <div class="my-4">
                         <h3 class="font-bold mb-2">Choose Your Delivery Option</h3>
                         <button id="free-delivery" type="button"
-                            class="bg-green-300 p-2 rounded mr-2 hover:bg-blue-300">Friday, AUG 25
+                            class="bg-green-300 p-2 rounded mr-2 hover:bg-blue-300">Wednesday, AUG 25
                             Free Prime
                             Delivery</button>
                         <button id="charge-delivery" type="button"
-                            class="bg-green-300 p-2 rounded hover:bg-blue-300">Friday, AUG 22
+                            class="bg-green-300 p-2 rounded hover:bg-blue-300">Saturday, AUG 22
                             Delivery Charge
                             $20</button>
                     </div>
@@ -115,10 +115,12 @@
                         </tbody>
                     </table>
                 </div>
+                <hr>
                 <!-- Promo -->
                 <div class="my-4">
-                    <input type="text" placeholder="Add Promo Code" class="border-4 border-gray-500">
-                    <button type="button" class="bg-red-600 p-1 rounded font-bold text-white">Apply</button>
+                    <input type="text" id="promo-input" placeholder="Add Promo Code" class="border-4 border-gray-500">
+                    <button type="button" id="promo-apply"
+                        class="bg-red-600 p-1 rounded font-bold text-white">Apply</button>
                 </div>
 
             </div>
@@ -128,7 +130,7 @@
 
     <footer>
         <div>
-            <p class="font-bold text-center text-4xl">Total: $<span>1299</span></p>
+            <p class="font-bold text-center text-4xl">Total: $<span id="footer-total">1299</span></p>
         </div>
     </footer>
     <script src="js/app.js"></script>

@@ -46,7 +46,7 @@ document.getElementById('charge-delivery').addEventListener('click', function ()
 
 //Update Total Cost
 
-function calculateTotal() {
+function calculateTotal(totalCost) {
     //Get ALl Price
     const basePrice = document.getElementById('best-price');
     const bestPrice = basePrice.innerText;
@@ -57,9 +57,37 @@ function calculateTotal() {
     const deliveryCost = document.getElementById('delivery-cost');
     const extraDeliveryCost = deliveryCost.innerText;
     const totalBill = parseInt(bestPrice) + parseInt(extraMemoryCost) + parseInt(extraStorageCost) + parseInt(extraDeliveryCost);
-    //Update Onclick Price
+    //Update Total Price
     const totalPrice = document.getElementById('total-cost');
     const newPrice = totalPrice.innerText;
     totalPrice.innerText = totalBill;
+    //Update Footer Total
+    const footerTotalPrice = document.getElementById('footer-total');
+    const footerNewPrice = footerTotalPrice.innerText;
+    footerTotalPrice.innerText = totalBill;
+    return footerNewPrice;
 }
+
+//Apply Promo
+
+document.getElementById('promo-apply').addEventListener('click', function () {
+    //get promo code
+    const getPromo = document.getElementById('promo-input');
+    const promoCode = getPromo.value;
+    const totalPrice = calculateTotal();
+    if (promoCode == 'stevekaku') {
+        const pricePromo = totalPrice * 0.8;
+        const footerTotalPrice = document.getElementById('footer-total');
+        const footerTotal = footerTotalPrice.innerText;
+        footerTotalPrice.innerText = parseFloat(pricePromo);
+    }
+    else {
+        alert("Incorrect Promo");
+    }
+    getPromo.value = '';
+    document.getElementById("promo-apply").disabled = true;
+
+});
+
+
 
